@@ -1,4 +1,5 @@
 import { getExchangeRates } from '../api';
+import { AMOUNT_CHANGED, CURRENCY_CODE_CHANGED } from './action';
 
 const initialState = {
   amount: '19.00',
@@ -53,10 +54,6 @@ export const getDisplayLabel = (state, currencyCode) => {
   const match = state.rates.currencyData[currencyCode];
   if (match) return match.displayLabel;
 };
-
-// action types
-export const AMOUNT_CHANGED = 'rates/amountChanged';
-export const CURRENCY_CODE_CHANGED = 'rates/currencyCodeChanged';
 
 // action creators
 export const changeAmount = (amount) => ({
